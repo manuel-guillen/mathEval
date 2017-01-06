@@ -72,12 +72,9 @@ public class ExpressionParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_expr; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpressionListener ) ((ExpressionListener)listener).enterExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpressionListener ) ((ExpressionListener)listener).exitExpr(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExpressionVisitor ) return ((ExpressionVisitor<? extends T>)visitor).visitExpr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

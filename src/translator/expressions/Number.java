@@ -9,8 +9,8 @@ public class Number implements Expression {
 
 	private double value;
 	
-	public Number(double value) {
-		this.value = value;
+	public Number(String value) {
+		this.value = Double.parseDouble(value);
 	}
 	
 	@Override

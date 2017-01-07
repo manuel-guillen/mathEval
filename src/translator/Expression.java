@@ -1,5 +1,8 @@
 package translator;
 
+import translator.expressions.*;
+import translator.expressions.Number;
+
 /**
  * An immutable data type representing the structure of a mathematical expression consisting 
  * of addition, subtraction, multiplication, division, and exponentiation of nonnegative
@@ -29,6 +32,34 @@ public interface Expression {
 	public static Expression parse(String expr) {
 		// TODO Implement expression parsing.
 		return null;
+	}
+	
+	public static Expression getNumberExpression(String num) {
+		return new Number(num);			
+	}
+	
+	public static Expression getVariableExpression(String var) {
+		return new Variable(var);
+	}
+
+	public default Expression add(Expression expr) {
+		return new Addition(this, expr);
+	}
+
+	public default Expression subtract(Expression expr) {
+		return new Subtraction(this, expr);
+	}
+
+	public default Expression multiply(Expression expr) {
+		return new Multiplication(this, expr);
+	}
+
+	public default Expression divide(Expression expr) {
+		return new Division(this, expr);
+	}
+
+	public default Expression pow(Expression expr) {
+		return new Exponentiation(this, expr);
 	}
 
 	/**

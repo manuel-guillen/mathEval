@@ -18,11 +18,15 @@ grammar Expression;
 
 // =========================== GRAMMAR ============================
 
-expr:					'(' expr ')'
-	|	<assoc=right>	expr '^' expr
-	|					expr ('*' | '/') expr
-	|					expr ('+' | '-') expr
-	| 					VARIABLE | NUMBER;
+expr:					'(' expr ')'						#parenthesisExpr
+	|	<assoc=right>	left=expr op='^' right=expr			#operationExpr
+	|					left=expr op=('*' | '/') right=expr	#operationExpr
+	|					left=expr op=('+' | '-') right=expr	#operationExpr
+	| 					VARIABLE 							#variableExpr
+	| 					NUMBER								#numberExpr
+	;
 
 NUMBER:		[0-9]+;
 VARIABLE:	[A-Za-z]+;
+
+WHITESPACE:	[ \t]+ -> skip;

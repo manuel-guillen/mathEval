@@ -1,5 +1,13 @@
 package translator;
 
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
+
+import parser.ExpressionLexer;
+import parser.ExpressionParser;
 import translator.expressions.*;
 import translator.expressions.Number;
 
@@ -30,8 +38,13 @@ public interface Expression {
 	 * @return the Expression representing the interpretation of the string
 	 */
 	public static Expression parse(String expr) {
-		// TODO Implement expression parsing.
-		return null;
+		CharStream stream = new ANTLRInputStream(expr);
+		ExpressionLexer lexer = new ExpressionLexer(stream);
+		TokenStream tokens = new CommonTokenStream(lexer);
+		ExpressionParser parser = new ExpressionParser(tokens);
+
+		ParseTree tree = parser.expr();
+		return ExpressionInterpreter.interpretParseTree(tree);
 	}
 	
 	public static Expression getNumberExpression(String num) {

@@ -3,6 +3,7 @@ package translator;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import parser.ExpressionBaseVisitor;
+import parser.ExpressionParser.NegateExprContext;
 import parser.ExpressionParser.NumberExprContext;
 import parser.ExpressionParser.OperationExprContext;
 import parser.ExpressionParser.ParenthesisExprContext;
@@ -30,6 +31,11 @@ public class ExpressionInterpreter extends ExpressionBaseVisitor<Expression> {
 	@Override
 	public Expression visitParenthesisExpr(ParenthesisExprContext ctx) {
 		return visit(ctx.expr());
+	}
+	
+	@Override
+	public Expression visitNegateExpr(NegateExprContext ctx) {
+		return visit(ctx.expr()).negate();
 	}
 	
 	@Override

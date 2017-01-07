@@ -19,6 +19,7 @@ grammar Expression;
 // =========================== GRAMMAR ============================
 
 expr:					'(' expr ')'						#parenthesisExpr
+	|					'-' expr							#negateExpr
 	|	<assoc=right>	left=expr op='^' right=expr			#operationExpr
 	|					left=expr op=('*' | '/') right=expr	#operationExpr
 	|					left=expr op=('+' | '-') right=expr	#operationExpr
@@ -26,7 +27,10 @@ expr:					'(' expr ')'						#parenthesisExpr
 	| 					NUMBER								#numberExpr
 	;
 
-NUMBER:		[0-9]+;
+NUMBER:		DIGIT+ ('.' DIGIT+)?;
 VARIABLE:	[A-Za-z]+;
 
 WHITESPACE:	[ \t]+ -> skip;
+
+fragment
+DIGIT:		[0-9]+;

@@ -13,8 +13,8 @@ import translator.expressions.Number;
 
 /**
  * An immutable data type representing the structure of a mathematical expression consisting 
- * of addition, subtraction, multiplication, division, and exponentiation of nonnegative
- * integers and variables.
+ * of addition, subtraction, multiplication, division, exponentiation, and negation of
+ * numbers and variables.
  */
 public interface Expression {
 	
@@ -73,6 +73,10 @@ public interface Expression {
 
 	public default Expression pow(Expression expr) {
 		return new Exponentiation(this, expr);
+	}
+	
+	public default Expression negate() {
+		return new Negation(this);
 	}
 
 	/**

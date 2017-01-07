@@ -13,6 +13,13 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface ExpressionVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by the {@code negateExpr}
+	 * labeled alternative in {@link ExpressionParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNegateExpr(ExpressionParser.NegateExprContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code variableExpr}
 	 * labeled alternative in {@link ExpressionParser#expr}.
 	 * @param ctx the parse tree

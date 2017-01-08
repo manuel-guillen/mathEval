@@ -78,7 +78,9 @@ public interface Expression {
 	public default Expression negate() {
 		return new Negation(this);
 	}
-
+	
+	// ===============================================================
+	
 	/**
 	 * Returns a string representation of the expression.
 	 * @return a string representation of the expression

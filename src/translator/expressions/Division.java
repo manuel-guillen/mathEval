@@ -12,6 +12,6 @@ public class Division extends BinaryOperation {
 	}
 
 	public int precedence() {
-		return 2;
+		return 4;
 	}
 }

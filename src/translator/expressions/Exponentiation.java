@@ -12,6 +12,6 @@ public class Exponentiation extends BinaryOperation {
 	}
 
 	public int precedence() {
-		return 1;
+		return 2;
 	}
 }

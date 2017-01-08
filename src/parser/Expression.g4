@@ -18,12 +18,12 @@ grammar Expression;
 
 // =========================== GRAMMAR ============================
 
-expr:					func=('sin' | 'cos' | 'tan') '(' expr ')'	#functionExpr
-	|					'(' expr ')'								#parenthesisExpr
-	|					'-' expr									#negateExpr
-	|	<assoc=right>	left=expr op='^' right=expr					#operationExpr
-	|					left=expr op=('*' | '/') right=expr			#operationExpr
-	|					left=expr op=('+' | '-') right=expr			#operationExpr
+expr:					func=('sin' | 'cos' | 'tan') '(' expr ')'	#functionExpr		// Precedence = 1
+	|					'(' expr ')'								#parenthesisExpr	// Precedence = 1
+	|	<assoc=right>	left=expr op='^' right=expr					#operationExpr		// Precedence = 2
+	|					'-' expr									#negateExpr			// Precedence = 3
+	|					left=expr op=('*' | '/') right=expr			#operationExpr		// Precedence = 4
+	|					left=expr op=('+' | '-') right=expr			#operationExpr		// Precedence = 5
 	| 					VARIABLE 									#variableExpr
 	| 					NUMBER										#numberExpr
 	;

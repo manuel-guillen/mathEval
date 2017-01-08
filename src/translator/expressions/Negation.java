@@ -11,4 +11,9 @@ public class Negation extends UnaryOperation {
 	public String operation() {
 		return "-";
 	}
+
+	@Override
+	public int precedence() {
+		return 3;
+	}
 }

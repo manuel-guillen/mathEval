@@ -12,6 +12,6 @@ public class Addition extends BinaryOperation {
 	}
 
 	public int precedence() {
-		return 3;
+		return 5;
 	}
 }

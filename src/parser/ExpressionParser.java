@@ -28,7 +28,7 @@ public class ExpressionParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'sin'", "'cos'", "'tan'", "'('", "')'", "'-'", "'^'", "'*'", "'/'", 
+		null, "'sin'", "'cos'", "'tan'", "'('", "')'", "'^'", "'-'", "'*'", "'/'", 
 		"'+'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
@@ -233,15 +233,15 @@ public class ExpressionParser extends Parser {
 				match(T__4);
 				}
 				break;
-			case T__5:
+			case T__6:
 				{
 				_localctx = new NegateExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(12);
-				match(T__5);
+				match(T__6);
 				setState(13);
-				expr(6);
+				expr(5);
 				}
 				break;
 			case VARIABLE:
@@ -283,11 +283,11 @@ public class ExpressionParser extends Parser {
 						((OperationExprContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(18);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
 						setState(19);
-						((OperationExprContext)_localctx).op = match(T__6);
+						((OperationExprContext)_localctx).op = match(T__5);
 						setState(20);
-						((OperationExprContext)_localctx).right = expr(5);
+						((OperationExprContext)_localctx).right = expr(6);
 						}
 						break;
 					case 2:
@@ -322,7 +322,7 @@ public class ExpressionParser extends Parser {
 						setState(25);
 						((OperationExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==T__5 || _la==T__9) ) {
+						if ( !(_la==T__6 || _la==T__9) ) {
 							((OperationExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -364,7 +364,7 @@ public class ExpressionParser extends Parser {
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 5);
+			return precpred(_ctx, 6);
 		case 1:
 			return precpred(_ctx, 4);
 		case 2:
@@ -377,12 +377,12 @@ public class ExpressionParser extends Parser {
 		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\17#\4\2\t\2\3\2\3"+
 		"\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\5\2\23\n\2\3\2\3\2"+
 		"\3\2\3\2\3\2\3\2\3\2\3\2\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\2\3\2\3\2\2"+
-		"\5\3\2\3\5\3\2\n\13\4\2\b\b\f\f(\2\22\3\2\2\2\4\5\b\2\1\2\5\6\t\2\2\2"+
+		"\5\3\2\3\5\3\2\n\13\4\2\t\t\f\f(\2\22\3\2\2\2\4\5\b\2\1\2\5\6\t\2\2\2"+
 		"\6\7\7\6\2\2\7\b\5\2\2\2\b\t\7\7\2\2\t\23\3\2\2\2\n\13\7\6\2\2\13\f\5"+
-		"\2\2\2\f\r\7\7\2\2\r\23\3\2\2\2\16\17\7\b\2\2\17\23\5\2\2\b\20\23\7\16"+
+		"\2\2\2\f\r\7\7\2\2\r\23\3\2\2\2\16\17\7\t\2\2\17\23\5\2\2\7\20\23\7\16"+
 		"\2\2\21\23\7\r\2\2\22\4\3\2\2\2\22\n\3\2\2\2\22\16\3\2\2\2\22\20\3\2\2"+
-		"\2\22\21\3\2\2\2\23\37\3\2\2\2\24\25\f\7\2\2\25\26\7\t\2\2\26\36\5\2\2"+
-		"\7\27\30\f\6\2\2\30\31\t\3\2\2\31\36\5\2\2\7\32\33\f\5\2\2\33\34\t\4\2"+
+		"\2\22\21\3\2\2\2\23\37\3\2\2\2\24\25\f\b\2\2\25\26\7\b\2\2\26\36\5\2\2"+
+		"\b\27\30\f\6\2\2\30\31\t\3\2\2\31\36\5\2\2\7\32\33\f\5\2\2\33\34\t\4\2"+
 		"\2\34\36\5\2\2\6\35\24\3\2\2\2\35\27\3\2\2\2\35\32\3\2\2\2\36!\3\2\2\2"+
 		"\37\35\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2\5\22\35\37";
 	public static final ATN _ATN =

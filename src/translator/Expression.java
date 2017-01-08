@@ -28,6 +28,10 @@ public interface Expression {
 	 *                   + Multiplication(left, right: Expression)
 	 *                   + Division(left, right: Expression)
 	 *                   + Exponentiation(left, right: Expression)
+	 *                   + Negation(expr: Expression)
+	 *                   + Sine(expr: Expression)
+	 *                   + Cosine(expr: Expression)
+	 *                   + Tangent(expr: Expression)
 	 */
 	
 	/**
@@ -53,6 +57,18 @@ public interface Expression {
 	
 	public static Expression getVariableExpression(String var) {
 		return new Variable(var);
+	}
+	
+	public static Expression sine(Expression expr) {
+		return new Sine(expr);
+	}
+	
+	public static Expression cosine(Expression expr) {
+		return new Cosine(expr);
+	}
+	
+	public static Expression tangent(Expression expr) {
+		return new Tangent(expr);
 	}
 
 	public default Expression add(Expression expr) {

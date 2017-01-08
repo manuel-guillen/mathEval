@@ -47,4 +47,11 @@ public interface ExpressionVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitParenthesisExpr(ExpressionParser.ParenthesisExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code functionExpr}
+	 * labeled alternative in {@link ExpressionParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunctionExpr(ExpressionParser.FunctionExprContext ctx);
 }

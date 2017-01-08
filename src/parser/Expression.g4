@@ -18,13 +18,14 @@ grammar Expression;
 
 // =========================== GRAMMAR ============================
 
-expr:					'(' expr ')'						#parenthesisExpr
-	|					'-' expr							#negateExpr
-	|	<assoc=right>	left=expr op='^' right=expr			#operationExpr
-	|					left=expr op=('*' | '/') right=expr	#operationExpr
-	|					left=expr op=('+' | '-') right=expr	#operationExpr
-	| 					VARIABLE 							#variableExpr
-	| 					NUMBER								#numberExpr
+expr:					func=('sin' | 'cos' | 'tan') '(' expr ')'	#functionExpr
+	|					'(' expr ')'								#parenthesisExpr
+	|					'-' expr									#negateExpr
+	|	<assoc=right>	left=expr op='^' right=expr					#operationExpr
+	|					left=expr op=('*' | '/') right=expr			#operationExpr
+	|					left=expr op=('+' | '-') right=expr			#operationExpr
+	| 					VARIABLE 									#variableExpr
+	| 					NUMBER										#numberExpr
 	;
 
 NUMBER:		DIGIT+ ('.' DIGIT+)?;

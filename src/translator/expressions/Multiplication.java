@@ -3,6 +3,15 @@ package translator.expressions;
 import translator.Expression;
 
 public class Multiplication extends BinaryOperation {
-	public Multiplication(Expression left, Expression right) {	super(left, right);	}
-	protected String operator() {								return "*";			}
+	public Multiplication(Expression left, Expression right) {
+		super(left, right);
+	}
+
+	public String operation() {
+		return "*";
+	}
+
+	public int precedence() {
+		return 2;
+	}
 }

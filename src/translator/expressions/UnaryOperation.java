@@ -11,10 +11,10 @@ public abstract class UnaryOperation implements Operation {
 	public UnaryOperation(Expression expr) {
 		this.expr = expr;
 	}
-
+	
 	@Override
-	public int precedence() {
-		return 1;
+	public String toString() {
+		return operation() + ((expr instanceof Operation && ((Operation) expr).precedence() > this.precedence()) ? "(" + expr + ")" : expr);
 	}
 
 	@Override
@@ -22,11 +22,6 @@ public abstract class UnaryOperation implements Operation {
 		if (!(obj instanceof UnaryOperation)) return false;
 		UnaryOperation other = (UnaryOperation) obj;
 		return this.operation().equals(other.operation()) && this.expr.equals(other.expr);
-	}
-
-	@Override
-	public String toString() {
-		return operation() + "(" + expr + ")";
 	}
 
 	@Override

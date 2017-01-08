@@ -2,7 +2,7 @@ package translator.expressions;
 
 import translator.Expression;
 
-public class Tangent extends UnaryOperation {
+public class Tangent extends Function {
 
 	public Tangent(Expression expr) {
 		super(expr);

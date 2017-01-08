@@ -22,7 +22,8 @@ public abstract class BinaryOperation implements Operation {
 
 	@Override
 	public String toString() {
-		return "(" + left + ") " + operation() + " (" + right + ")";
+		return ((left instanceof Operation && ((Operation) left).precedence() > this.precedence()) ? "(" + left + ")" : left) + operation() + 
+				((right instanceof Operation && ((Operation) right).precedence() > this.precedence()) ? "(" + right + ")" : right);
 	}
 
 	@Override

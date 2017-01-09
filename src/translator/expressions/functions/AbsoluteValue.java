@@ -8,6 +8,11 @@ public class AbsoluteValue extends Function {
 	public AbsoluteValue(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return new SignFunction(expr);
+	}
 
 	@Override
 	public String operation() {

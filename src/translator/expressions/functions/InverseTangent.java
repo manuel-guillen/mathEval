@@ -8,6 +8,11 @@ public class InverseTangent extends Function {
 	public InverseTangent(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return ONE.divide(ONE.add(expr.sqr()));
+	}
 
 	@Override
 	public String operation() {

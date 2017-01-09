@@ -11,7 +11,12 @@ public class Variable implements Expression {
 	public Variable(String name) {
 		this.name = name;
 	}
-
+	
+	@Override
+	public Expression derivative(String variable) {
+		return name.equals(variable) ? ONE : ZERO;
+	}
+	
 	@Override
 	public String toString() {
 		return name;

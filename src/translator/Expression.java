@@ -53,6 +53,10 @@ public interface Expression {
 	 *                   
 	 */
 	
+	public static final Expression ZERO = new Number(0);
+	public static final Expression ONE = new Number(1);
+	public static final Expression TWO = new Number(2);
+	
 	/**
 	 * Parses a String representation of an expression and returns an
 	 * Expression object representative of the expression interpreted.
@@ -70,7 +74,7 @@ public interface Expression {
 		return ExpressionInterpreter.interpretParseTree(tree);
 	}
 	
-	public static Expression getNumberExpression(String num) {
+	public static Expression getNumberExpression(double num) {
 		return new Number(num);			
 	}
 	
@@ -182,7 +186,13 @@ public interface Expression {
 		return new Negation(this);
 	}
 	
+	public default Expression sqr() {
+		return new Exponentiation(this,TWO);
+	}
+	
 	// ===============================================================
+	
+	public Expression derivative(String variable);
 	
 	/**
 	 * Returns a string representation of the expression.

@@ -8,6 +8,11 @@ public class ExponentialFunction extends Function {
 	public ExponentialFunction(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return this;
+	}
 
 	@Override
 	public String operation() {

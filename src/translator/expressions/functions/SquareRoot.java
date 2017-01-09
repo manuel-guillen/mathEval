@@ -8,6 +8,11 @@ public class SquareRoot extends Function {
 	public SquareRoot(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return ONE.divide(TWO.multiply(this));
+	}
 
 	@Override
 	public String operation() {

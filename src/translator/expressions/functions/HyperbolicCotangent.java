@@ -8,6 +8,11 @@ public class HyperbolicCotangent extends Function {
 	public HyperbolicCotangent(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return new HyperbolicCosecant(expr).sqr().negate();
+	}
 
 	@Override
 	public String operation() {

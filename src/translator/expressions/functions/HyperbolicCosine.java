@@ -8,6 +8,11 @@ public class HyperbolicCosine extends Function {
 	public HyperbolicCosine(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return new HyperbolicSine(expr);
+	}
 
 	@Override
 	public String operation() {

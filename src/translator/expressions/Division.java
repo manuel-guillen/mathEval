@@ -7,6 +7,11 @@ public class Division extends BinaryOperation {
 		super(left, right);
 	}
 
+	@Override
+	public Expression derivative(String variable) {
+		return left.derivative(variable).multiply(right).subtract(left.multiply(right.derivative(variable))).divide(right.sqr());
+	}
+	
 	public String operation() {
 		return "/";
 	}

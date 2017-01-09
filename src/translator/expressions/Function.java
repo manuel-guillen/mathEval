@@ -8,6 +8,13 @@ public abstract class Function extends UnaryOperation {
 		super(expr);
 	}
 	
+	protected abstract Expression derivative();
+	
+	@Override
+	public Expression derivative(String variable) {
+		return derivative().multiply(expr.derivative(variable));
+	}
+	
 	@Override
 	public int precedence() {
 		return 1;

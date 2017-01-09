@@ -21,7 +21,7 @@ public class ExpressionInterpreter extends ExpressionBaseVisitor<Expression> {
 	
 	@Override
 	public Expression visitNumberExpr(NumberExprContext ctx) {
-		return Expression.getNumberExpression(ctx.getText());
+		return Expression.getNumberExpression(Double.parseDouble(ctx.getText()));
 	}
 	
 	@Override

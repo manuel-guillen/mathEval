@@ -6,11 +6,16 @@ import java.util.Objects;
 import translator.Expression;
 
 public class Number implements Expression {
-
+	
 	private double value;
-
-	public Number(String value) {
-		this.value = Double.parseDouble(value);
+	
+	public Number(double value) {
+		this.value = value;
+	}
+	
+	@Override
+	public Expression derivative(String variable) {
+		return ZERO;
 	}
 
 	@Override

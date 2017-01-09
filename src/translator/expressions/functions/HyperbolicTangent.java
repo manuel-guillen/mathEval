@@ -8,6 +8,11 @@ public class HyperbolicTangent extends Function {
 	public HyperbolicTangent(Expression expr) {
 		super(expr);
 	}
+	
+	@Override
+	protected Expression derivative() {
+		return new HyperbolicSecant(expr).sqr();
+	}
 
 	@Override
 	public String operation() {

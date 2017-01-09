@@ -18,7 +18,13 @@ grammar Expression;
 
 // =========================== GRAMMAR ============================
 
-expr:					func=('sin' | 'cos' | 'tan') '(' expr ')'	#functionExpr		// Precedence = 1
+funcName: 'abs'  | 'sgn'  | 'sqrt' | 'exp'  | 'ln'
+		| 'sin'  | 'cos'  | 'tan'  | 'csc'  | 'sec'  | 'cot'
+		| 'sinh' | 'cosh' | 'tanh' | 'csch' | 'sech' | 'coth'
+		| 'asin' | 'acos' | 'atan'
+		;
+
+expr:					func=funcName '(' expr ')'					#functionExpr		// Precedence = 1
 	|					'(' expr ')'								#parenthesisExpr	// Precedence = 1
 	|	<assoc=right>	left=expr op='^' right=expr					#operationExpr		// Precedence = 2
 	|					'-' expr									#negateExpr			// Precedence = 3

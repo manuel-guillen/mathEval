@@ -33,10 +33,27 @@ public class ExpressionInterpreter extends ExpressionBaseVisitor<Expression> {
 	public Expression visitFunctionExpr(FunctionExprContext ctx) {
 		Expression expr = visit(ctx.expr());
 		switch(ctx.func.getText()) {
-		case "sin":	return Expression.sine(expr);
-		case "cos":	return Expression.cosine(expr);
-		case "tan":	return Expression.tangent(expr);
-		default:	throw new RuntimeException("Illegal function parsed.");
+		case "abs":		return Expression.abs(expr);
+		case "sgn":		return Expression.sgn(expr);
+		case "sqrt":	return Expression.sqrt(expr);
+		case "exp":		return Expression.exp(expr);
+		case "ln":		return Expression.ln(expr);
+		case "sin":		return Expression.sin(expr);
+		case "cos":		return Expression.cos(expr);
+		case "tan":		return Expression.tan(expr);
+		case "csc":		return Expression.csc(expr);
+		case "sec":		return Expression.sec(expr);
+		case "cot":		return Expression.cot(expr);
+		case "sinh":	return Expression.sinh(expr);
+		case "cosh":	return Expression.cosh(expr);
+		case "tanh":	return Expression.tanh(expr);
+		case "csch":	return Expression.csch(expr);
+		case "sech":	return Expression.sech(expr);
+		case "coth":	return Expression.coth(expr);
+		case "asin":	return Expression.asin(expr);
+		case "acos":	return Expression.acos(expr);
+		case "atan":	return Expression.atan(expr);
+		default:		throw new RuntimeException("Illegal function parsed.");
 		}
 	}
 	

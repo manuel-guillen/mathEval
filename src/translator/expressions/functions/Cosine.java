@@ -1,6 +1,7 @@
-package translator.expressions;
+package translator.expressions.functions;
 
 import translator.Expression;
+import translator.expressions.Function;
 
 public class Cosine extends Function {
 

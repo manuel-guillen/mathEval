@@ -20,8 +20,17 @@ public class Addition extends BinaryOperation {
 	
 	@Override
 	public Expression simplify() {
-		// TODO Implement simplification
-		return this;
+		Expression left = this.left.simplify();
+		Expression right = this.right.simplify();
+		
+		if (left.isNumber() && right.isNumber())
+			return new Number(left.getValue() + right.getValue());
+		
+		if (left.equals(ZERO)) return right;
+		if (right.equals(ZERO)) return left;
+		if (left.negate().equals(right) || left.equals(right.negate())) return ZERO;
+		
+		return left.add(right);
 	}
 	
 	@Override

@@ -20,8 +20,22 @@ public class Exponentiation extends BinaryOperation {
 	
 	@Override
 	public Expression simplify() {
-		// TODO Implement simplification
-		return this;
+		Expression left = this.left.simplify();
+		Expression right = this.right.simplify();
+		
+		if (left.equals(ZERO) || right.equals(ZERO)) {
+			if (left.equals(ZERO) && right.equals(ZERO)) throw new ArithmeticException("Indeterminate form 0^0");
+			if (left.equals(ZERO)) return ZERO;
+			else				   return ONE;
+		}
+		
+		if (left.isNumber() && right.isNumber())
+			return new Number(left.getValue() * right.getValue());
+		
+		if (left.equals(ONE)) return ONE;
+		if (right.equals(ONE)) return left;
+		
+		return left.pow(right);
 	}
 	
 	@Override

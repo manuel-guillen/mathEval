@@ -20,8 +20,23 @@ public class Multiplication extends BinaryOperation {
 	
 	@Override
 	public Expression simplify() {
-		// TODO Implement simplification
-		return this;
+		Expression left = this.left.simplify();
+		Expression right = this.right.simplify();
+		
+		if (left.isNumber() && right.isNumber())
+			return new Number(left.getValue() * right.getValue());
+		
+		if (left.equals(ZERO) || right.equals(ZERO)) return ZERO;
+		if (left.equals(ONE)) return right;
+		if (right.equals(ONE)) return left;
+		if (ONE.divide(left).equals(right) || left.equals(ONE.divide(right))) return ONE;
+		
+		if (left instanceof Division && right instanceof Division) {
+			BinaryOperation l = (BinaryOperation) left, r = (BinaryOperation) right;
+			return l.left.multiply(r.left).divide(l.right.multiply(r.right)).simplify();
+		}
+		
+		return left.multiply(right);
 	}
 	
 	@Override

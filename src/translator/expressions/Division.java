@@ -20,8 +20,22 @@ public class Division extends BinaryOperation {
 	
 	@Override
 	public Expression simplify() {
-		// TODO Implement simplification
-		return this;
+		Expression left = this.left.simplify();
+		Expression right = this.right.simplify();
+		
+		if (right.equals(ZERO)) throw new ArithmeticException("Cannot divide by zero");
+		if (left.equals(ZERO)) return ZERO;
+		
+		if (left.isNumber() && right.isNumber())
+			return new Number(left.getValue() / right.getValue());
+		
+		if (right.equals(ONE)) return left;
+		if (left.equals(right)) return ONE;
+		
+		if (right instanceof Division)
+			return left.multiply(((BinaryOperation)right).right.divide(((BinaryOperation)right).left)).simplify();
+		
+		return left.divide(right);
 	}
 
 	@Override

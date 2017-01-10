@@ -10,13 +10,19 @@ public class Cosine extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return new Sine(expr).negate();
-	}
-
-	@Override
 	public String operation() {
 		return "cos";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return new Sine(expr).negate();
 	}
 
 }

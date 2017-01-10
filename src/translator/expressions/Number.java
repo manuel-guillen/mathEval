@@ -14,10 +14,27 @@ public class Number implements Expression {
 	}
 	
 	@Override
+	public boolean isNumber() {
+		return true;
+	}
+	
+	@Override
+	public double getValue() {
+		return value;
+	}
+	
+	@Override
+	public Expression simplify() {
+		return this;
+	}
+	
+	@Override
 	public Expression derivative(String variable) {
 		return ZERO;
 	}
-
+	
+	private static final DecimalFormat NUMBER_FORMAT = new DecimalFormat("0.###############");
+	
 	@Override
 	public String toString() {
 		return NUMBER_FORMAT.format(value);
@@ -35,5 +52,4 @@ public class Number implements Expression {
 		return Objects.hash(value);
 	}
 
-	private static final DecimalFormat NUMBER_FORMAT = new DecimalFormat("0.###############");
 }

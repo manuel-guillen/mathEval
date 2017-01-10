@@ -10,13 +10,19 @@ public class InverseCosine extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return ONE.divide(new SquareRoot(ONE.subtract(expr.sqr()))).negate();
-	}
-
-	@Override
 	public String operation() {
 		return "acos";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return ONE.divide(new SquareRoot(ONE.subtract(expr.sqr()))).negate();
 	}
 
 }

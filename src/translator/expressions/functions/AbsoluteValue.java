@@ -10,13 +10,19 @@ public class AbsoluteValue extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return new SignFunction(expr);
-	}
-
-	@Override
 	public String operation() {
 		return "abs";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return new SignFunction(expr);
 	}
 
 }

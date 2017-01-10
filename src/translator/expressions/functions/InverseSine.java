@@ -10,13 +10,19 @@ public class InverseSine extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return ONE.divide(new SquareRoot(ONE.subtract(expr.sqr())));
-	}
-
-	@Override
 	public String operation() {
 		return "asin";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return ONE.divide(new SquareRoot(ONE.subtract(expr.sqr())));
 	}
 
 }

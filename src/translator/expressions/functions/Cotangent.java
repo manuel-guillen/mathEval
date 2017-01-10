@@ -10,13 +10,19 @@ public class Cotangent extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return new Cosecant(expr).sqr().negate();
-	}
-
-	@Override
 	public String operation() {
 		return "cot";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return new Cosecant(expr).sqr().negate();
 	}
 
 }

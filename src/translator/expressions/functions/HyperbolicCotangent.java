@@ -10,13 +10,19 @@ public class HyperbolicCotangent extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return new HyperbolicCosecant(expr).sqr().negate();
-	}
-
-	@Override
 	public String operation() {
 		return "coth";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return new HyperbolicCosecant(expr).sqr().negate();
 	}
 
 }

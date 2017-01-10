@@ -10,13 +10,19 @@ public class InverseTangent extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return ONE.divide(ONE.add(expr.sqr()));
-	}
-
-	@Override
 	public String operation() {
 		return "atan";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return ONE.divide(ONE.add(expr.sqr()));
 	}
 
 }

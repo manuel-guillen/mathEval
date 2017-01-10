@@ -192,6 +192,11 @@ public interface Expression {
 	
 	// ===============================================================
 	
+	public boolean isNumber();
+	public double getValue();
+	
+	public Expression simplify();
+	
 	public Expression derivative(String variable);
 	
 	/**

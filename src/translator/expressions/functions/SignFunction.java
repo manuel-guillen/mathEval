@@ -8,15 +8,21 @@ public class SignFunction extends Function {
 	public SignFunction(Expression expr) {
 		super(expr);
 	}
+
+	@Override
+	public String operation() {
+		return "sgn";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
 	
 	@Override
 	protected Expression derivative() {
 		return ZERO;
 	}
 	
-	@Override
-	public String operation() {
-		return "sgn";
-	}
-
 }

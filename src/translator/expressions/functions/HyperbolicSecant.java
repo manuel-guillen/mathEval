@@ -10,13 +10,19 @@ public class HyperbolicSecant extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return this.multiply(new HyperbolicTangent(expr)).negate();
-	}
-
-	@Override
 	public String operation() {
 		return "sech";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return this.multiply(new HyperbolicTangent(expr)).negate();
 	}
 
 }

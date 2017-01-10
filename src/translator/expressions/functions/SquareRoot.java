@@ -10,13 +10,19 @@ public class SquareRoot extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return ONE.divide(TWO.multiply(this));
-	}
-
-	@Override
 	public String operation() {
 		return "sqrt";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return ONE.divide(TWO.multiply(this));
 	}
 
 }

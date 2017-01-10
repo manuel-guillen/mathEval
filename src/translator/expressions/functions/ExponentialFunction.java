@@ -10,13 +10,19 @@ public class ExponentialFunction extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return this;
-	}
-
-	@Override
 	public String operation() {
 		return "exp";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return this;
 	}
 
 }

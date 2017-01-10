@@ -10,13 +10,19 @@ public class Cosecant extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return this.multiply(new Cotangent(expr)).negate();
-	}
-
-	@Override
 	public String operation() {
 		return "csc";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return this.multiply(new Cotangent(expr)).negate();
 	}
 
 }

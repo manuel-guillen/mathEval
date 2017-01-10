@@ -10,13 +10,19 @@ public class Secant extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return this.multiply(new Tangent(expr));
-	}
-
-	@Override
 	public String operation() {
 		return "sec";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return this.multiply(new Tangent(expr));
 	}
 
 }

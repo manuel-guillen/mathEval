@@ -13,6 +13,21 @@ public class Variable implements Expression {
 	}
 	
 	@Override
+	public boolean isNumber() {
+		return false;
+	}
+	
+	@Override
+	public double getValue() {
+		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+	public Expression simplify() {
+		return this;
+	}
+	
+	@Override
 	public Expression derivative(String variable) {
 		return name.equals(variable) ? ONE : ZERO;
 	}

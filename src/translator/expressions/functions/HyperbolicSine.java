@@ -10,13 +10,19 @@ public class HyperbolicSine extends Function {
 	}
 	
 	@Override
-	protected Expression derivative() {
-		return new HyperbolicCosine(expr);
-	}
-
-	@Override
 	public String operation() {
 		return "sinh";
+	}
+	
+	@Override
+	public Expression simplify() {
+		// TODO Implement simplification
+		return this;
+	}
+	
+	@Override
+	protected Expression derivative() {
+		return new HyperbolicCosine(expr);
 	}
 
 }

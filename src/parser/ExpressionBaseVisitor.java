@@ -1,7 +1,8 @@
-// Generated from Expression.g4 by ANTLR 4.6
+// Generated from Expression.g4 by ANTLR 4.4
 
 	package parser;
 
+import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -19,47 +20,47 @@ public class ExpressionBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFuncName(ExpressionParser.FuncNameContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFuncName(@NotNull ExpressionParser.FuncNameContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNegateExpr(ExpressionParser.NegateExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNegateExpr(@NotNull ExpressionParser.NegateExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariableExpr(ExpressionParser.VariableExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariableExpr(@NotNull ExpressionParser.VariableExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNumberExpr(ExpressionParser.NumberExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNumberExpr(@NotNull ExpressionParser.NumberExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitOperationExpr(ExpressionParser.OperationExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitOperationExpr(@NotNull ExpressionParser.OperationExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitParenthesisExpr(ExpressionParser.ParenthesisExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitParenthesisExpr(@NotNull ExpressionParser.ParenthesisExprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunctionExpr(ExpressionParser.FunctionExprContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunctionExpr(@NotNull ExpressionParser.FunctionExprContext ctx) { return visitChildren(ctx); }
 }

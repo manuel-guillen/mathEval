@@ -20,8 +20,10 @@ public class Negation extends UnaryOperation {
 	
 	@Override
 	public Expression simplify() {
-		// TODO Implement simplification
-		return this;
+		Expression expr = this.expr.simplify();
+		if (expr instanceof Negation) return ((Negation) expr).expr;
+		
+		return expr.negate();
 	}
 	
 	@Override

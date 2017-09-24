@@ -1,4 +1,4 @@
-// Generated from Expression.g4 by ANTLR 4.6
+// Generated from Expression.g4 by ANTLR 4.4
 
 	package parser;
 
@@ -13,68 +13,33 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ExpressionParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, T__26=27, NUMBER=28, VARIABLE=29, WHITESPACE=30;
+		T__26=1, T__25=2, T__24=3, T__23=4, T__22=5, T__21=6, T__20=7, T__19=8, 
+		T__18=9, T__17=10, T__16=11, T__15=12, T__14=13, T__13=14, T__12=15, T__11=16, 
+		T__10=17, T__9=18, T__8=19, T__7=20, T__6=21, T__5=22, T__4=23, T__3=24, 
+		T__2=25, T__1=26, T__0=27, NUMBER=28, VARIABLE=29, WHITESPACE=30;
+	public static final String[] tokenNames = {
+		"<INVALID>", "'/'", "'coth'", "'cos'", "'^'", "'asin'", "'csc'", "'sgn'", 
+		"'sin'", "'('", "'*'", "'csch'", "'atan'", "'sech'", "'tan'", "'sqrt'", 
+		"'cot'", "'abs'", "'ln'", "'cosh'", "'acos'", "'sec'", "')'", "'tanh'", 
+		"'exp'", "'+'", "'sinh'", "'-'", "NUMBER", "VARIABLE", "WHITESPACE"
+	};
 	public static final int
 		RULE_funcName = 0, RULE_expr = 1;
 	public static final String[] ruleNames = {
 		"funcName", "expr"
 	};
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'abs'", "'sgn'", "'sqrt'", "'exp'", "'ln'", "'sin'", "'cos'", "'tan'", 
-		"'csc'", "'sec'", "'cot'", "'sinh'", "'cosh'", "'tanh'", "'csch'", "'sech'", 
-		"'coth'", "'asin'", "'acos'", "'atan'", "'('", "')'", "'^'", "'-'", "'*'", 
-		"'/'", "'+'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, "NUMBER", "VARIABLE", "WHITESPACE"
-	};
-	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
-
-	/**
-	 * @deprecated Use {@link #VOCABULARY} instead.
-	 */
-	@Deprecated
-	public static final String[] tokenNames;
-	static {
-		tokenNames = new String[_SYMBOLIC_NAMES.length];
-		for (int i = 0; i < tokenNames.length; i++) {
-			tokenNames[i] = VOCABULARY.getLiteralName(i);
-			if (tokenNames[i] == null) {
-				tokenNames[i] = VOCABULARY.getSymbolicName(i);
-			}
-
-			if (tokenNames[i] == null) {
-				tokenNames[i] = "<INVALID>";
-			}
-		}
-	}
-
-	@Override
-	@Deprecated
-	public String[] getTokenNames() {
-		return tokenNames;
-	}
-
-	@Override
-
-	public Vocabulary getVocabulary() {
-		return VOCABULARY;
-	}
-
 	@Override
 	public String getGrammarFileName() { return "Expression.g4"; }
+
+	@Override
+	public String[] getTokenNames() { return tokenNames; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -119,14 +84,10 @@ public class ExpressionParser extends Parser {
 			{
 			setState(4);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << T__1) | (1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8) | (1L << T__9) | (1L << T__10) | (1L << T__11) | (1L << T__12) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__25) | (1L << T__24) | (1L << T__22) | (1L << T__21) | (1L << T__20) | (1L << T__19) | (1L << T__16) | (1L << T__15) | (1L << T__14) | (1L << T__13) | (1L << T__12) | (1L << T__11) | (1L << T__10) | (1L << T__9) | (1L << T__8) | (1L << T__7) | (1L << T__6) | (1L << T__4) | (1L << T__3) | (1L << T__1))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -210,11 +171,11 @@ public class ExpressionParser extends Parser {
 	}
 	public static class FunctionExprContext extends ExprContext {
 		public FuncNameContext func;
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
 		public FuncNameContext funcName() {
 			return getRuleContext(FuncNameContext.class,0);
+		}
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
 		}
 		public FunctionExprContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
@@ -241,65 +202,55 @@ public class ExpressionParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(20);
-			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
-			case T__1:
-			case T__2:
-			case T__3:
-			case T__4:
-			case T__5:
-			case T__6:
-			case T__7:
-			case T__8:
-			case T__9:
-			case T__10:
-			case T__11:
-			case T__12:
-			case T__13:
-			case T__14:
-			case T__15:
-			case T__16:
-			case T__17:
-			case T__18:
-			case T__19:
-				{
-				_localctx = new FunctionExprContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-
-				setState(7);
-				((FunctionExprContext)_localctx).func = funcName();
-				setState(8);
-				match(T__20);
-				setState(9);
-				expr(0);
-				setState(10);
-				match(T__21);
-				}
-				break;
-			case T__20:
-				{
-				_localctx = new ParenthesisExprContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-				setState(12);
-				match(T__20);
-				setState(13);
-				expr(0);
-				setState(14);
-				match(T__21);
-				}
-				break;
-			case T__23:
 				{
 				_localctx = new NegateExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(16);
-				match(T__23);
-				setState(17);
-				expr(5);
+
+				setState(7); match(T__0);
+				setState(8); expr(5);
+				}
+				break;
+			case T__25:
+			case T__24:
+			case T__22:
+			case T__21:
+			case T__20:
+			case T__19:
+			case T__16:
+			case T__15:
+			case T__14:
+			case T__13:
+			case T__12:
+			case T__11:
+			case T__10:
+			case T__9:
+			case T__8:
+			case T__7:
+			case T__6:
+			case T__4:
+			case T__3:
+			case T__1:
+				{
+				_localctx = new FunctionExprContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(9); ((FunctionExprContext)_localctx).func = funcName();
+				setState(10); match(T__18);
+				setState(11); expr(0);
+				setState(12); match(T__5);
+				}
+				break;
+			case T__18:
+				{
+				_localctx = new ParenthesisExprContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(14); match(T__18);
+				setState(15); expr(0);
+				setState(16); match(T__5);
 				}
 				break;
 			case VARIABLE:
@@ -307,8 +258,7 @@ public class ExpressionParser extends Parser {
 				_localctx = new VariableExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(18);
-				match(VARIABLE);
+				setState(18); match(VARIABLE);
 				}
 				break;
 			case NUMBER:
@@ -316,8 +266,7 @@ public class ExpressionParser extends Parser {
 				_localctx = new NumberExprContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(19);
-				match(NUMBER);
+				setState(19); match(NUMBER);
 				}
 				break;
 			default:
@@ -333,7 +282,6 @@ public class ExpressionParser extends Parser {
 					_prevctx = _localctx;
 					{
 					setState(31);
-					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 					case 1:
 						{
@@ -342,10 +290,8 @@ public class ExpressionParser extends Parser {
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(22);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(23);
-						((OperationExprContext)_localctx).op = match(T__22);
-						setState(24);
-						((OperationExprContext)_localctx).right = expr(6);
+						setState(23); ((OperationExprContext)_localctx).op = match(T__23);
+						setState(24); ((OperationExprContext)_localctx).right = expr(6);
 						}
 						break;
 					case 2:
@@ -358,16 +304,11 @@ public class ExpressionParser extends Parser {
 						setState(26);
 						((OperationExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==T__24 || _la==T__25) ) {
+						if ( !(_la==T__26 || _la==T__17) ) {
 							((OperationExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
-						else {
-							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-							_errHandler.reportMatch(this);
-							consume();
-						}
-						setState(27);
-						((OperationExprContext)_localctx).right = expr(5);
+						consume();
+						setState(27); ((OperationExprContext)_localctx).right = expr(5);
 						}
 						break;
 					case 3:
@@ -380,16 +321,11 @@ public class ExpressionParser extends Parser {
 						setState(29);
 						((OperationExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==T__23 || _la==T__26) ) {
+						if ( !(_la==T__2 || _la==T__0) ) {
 							((OperationExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
-						else {
-							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-							_errHandler.reportMatch(this);
-							consume();
-						}
-						setState(30);
-						((OperationExprContext)_localctx).right = expr(4);
+						consume();
+						setState(30); ((OperationExprContext)_localctx).right = expr(4);
 						}
 						break;
 					}
@@ -414,19 +350,15 @@ public class ExpressionParser extends Parser {
 
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 1:
-			return expr_sempred((ExprContext)_localctx, predIndex);
+		case 1: return expr_sempred((ExprContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
-		case 0:
-			return precpred(_ctx, 6);
-		case 1:
-			return precpred(_ctx, 4);
-		case 2:
-			return precpred(_ctx, 3);
+		case 0: return precpred(_ctx, 6);
+		case 1: return precpred(_ctx, 4);
+		case 2: return precpred(_ctx, 3);
 		}
 		return true;
 	}
@@ -435,15 +367,15 @@ public class ExpressionParser extends Parser {
 		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3 \'\4\2\t\2\4\3\t"+
 		"\3\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3"+
 		"\27\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3\"\n\3\f\3\16\3%\13\3\3"+
-		"\3\2\3\4\4\2\4\2\5\3\2\3\26\3\2\33\34\4\2\32\32\35\35+\2\6\3\2\2\2\4\26"+
-		"\3\2\2\2\6\7\t\2\2\2\7\3\3\2\2\2\b\t\b\3\1\2\t\n\5\2\2\2\n\13\7\27\2\2"+
-		"\13\f\5\4\3\2\f\r\7\30\2\2\r\27\3\2\2\2\16\17\7\27\2\2\17\20\5\4\3\2\20"+
-		"\21\7\30\2\2\21\27\3\2\2\2\22\23\7\32\2\2\23\27\5\4\3\7\24\27\7\37\2\2"+
-		"\25\27\7\36\2\2\26\b\3\2\2\2\26\16\3\2\2\2\26\22\3\2\2\2\26\24\3\2\2\2"+
-		"\26\25\3\2\2\2\27#\3\2\2\2\30\31\f\b\2\2\31\32\7\31\2\2\32\"\5\4\3\b\33"+
-		"\34\f\6\2\2\34\35\t\3\2\2\35\"\5\4\3\7\36\37\f\5\2\2\37 \t\4\2\2 \"\5"+
-		"\4\3\6!\30\3\2\2\2!\33\3\2\2\2!\36\3\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2"+
-		"\2\2$\5\3\2\2\2%#\3\2\2\2\5\26!#";
+		"\3\2\3\4\4\2\4\2\5\7\2\4\5\7\n\r\27\31\32\34\34\4\2\3\3\f\f\4\2\33\33"+
+		"\35\35+\2\6\3\2\2\2\4\26\3\2\2\2\6\7\t\2\2\2\7\3\3\2\2\2\b\t\b\3\1\2\t"+
+		"\n\7\35\2\2\n\27\5\4\3\7\13\f\5\2\2\2\f\r\7\13\2\2\r\16\5\4\3\2\16\17"+
+		"\7\30\2\2\17\27\3\2\2\2\20\21\7\13\2\2\21\22\5\4\3\2\22\23\7\30\2\2\23"+
+		"\27\3\2\2\2\24\27\7\37\2\2\25\27\7\36\2\2\26\b\3\2\2\2\26\13\3\2\2\2\26"+
+		"\20\3\2\2\2\26\24\3\2\2\2\26\25\3\2\2\2\27#\3\2\2\2\30\31\f\b\2\2\31\32"+
+		"\7\6\2\2\32\"\5\4\3\b\33\34\f\6\2\2\34\35\t\3\2\2\35\"\5\4\3\7\36\37\f"+
+		"\5\2\2\37 \t\4\2\2 \"\5\4\3\6!\30\3\2\2\2!\33\3\2\2\2!\36\3\2\2\2\"%\3"+
+		"\2\2\2#!\3\2\2\2#$\3\2\2\2$\5\3\2\2\2%#\3\2\2\2\5\26!#";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
